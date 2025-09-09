@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,30 +13,63 @@ namespace DangKyHocPhanSinhVien
 {
     public partial class FrmDangNhap : Form
     {
+        DBTaiKhoan tk = new DBTaiKhoan();
         public FrmDangNhap()
         {
             InitializeComponent();
         }
 
-        private void FrmDangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dg = MessageBox.Show("Bạn có muốn thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dg == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            lblThongBao.ResetText();
+            string err = "Sai tên người dùng hoặc mật khẩu! Vui lòng nhập lại!";
+            int check = tk.DangNhap(txtDangNhap.Text.Trim(), txtMatKhau.Text.Trim());
+            if (check == 1)
+            {
+                FrmTrangAdmin ad = new FrmTrangAdmin();
+                ad.MaSo = txtDangNhap.Text.Trim(); // gán mã số để biết user nào đang đăng nhập
+                ad.ShowDialog(); // mở form
+                txtDangNhap.ResetText();
+                txtMatKhau.ResetText();
+                this.Hide();
+                this.Show();
+            }
+            else if (check == 2)
+            {
 
+            }
+            else if (check == 3)
+            {
+
+            }
+            else
+            {
+                lblThongBao.Text = err;
+                txtDangNhap.ResetText();
+                txtMatKhau.ResetText();
+                txtDangNhap.Focus();
+            }
         }
 
+        private void cboHienMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cboHienMatKhau.Checked)
+            {
+                txtMatKhau.PasswordChar = (char)0;
+            }
+            else
+            {
+                txtMatKhau.PasswordChar = '*';
+            }
+        }
     }
 }

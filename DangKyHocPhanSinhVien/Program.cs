@@ -10,7 +10,7 @@ namespace DangKyHocPhanSinhVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTrangAdmin()); // form khởi động
+            Application.Run(new FrmDangNhap()); // form khởi động
         }
     }
 }
