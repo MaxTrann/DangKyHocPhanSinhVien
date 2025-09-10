@@ -31,5 +31,7 @@ namespace BusinessLayer
         {
             return db.MyExecuteQueryDataSet($"SELECT * FORM dbo.fn_ThongTinSV('{_MaSV}')", CommandType.Text);
         }
+
+
     }
 }

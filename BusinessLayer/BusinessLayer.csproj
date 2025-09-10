@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBQuanLy.cs" />
     <Compile Include="DBSinhVien.cs" />
     <Compile Include="DBTaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

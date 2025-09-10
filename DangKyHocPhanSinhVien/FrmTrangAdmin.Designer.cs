@@ -54,7 +54,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1184, 144);
+            this.pictureBox1.Size = new System.Drawing.Size(1232, 144);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -69,7 +69,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 144);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1184, 71);
+            this.groupBox1.Size = new System.Drawing.Size(1232, 71);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -78,9 +78,9 @@
             // 
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(1070, 26);
+            this.btnThoat.Location = new System.Drawing.Point(1110, 26);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(108, 35);
+            this.btnThoat.Size = new System.Drawing.Size(116, 39);
             this.btnThoat.TabIndex = 3;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -88,9 +88,9 @@
             // btnDoiMatKhau
             // 
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(941, 26);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(981, 26);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(108, 37);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(116, 39);
             this.btnDoiMatKhau.TabIndex = 2;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
@@ -124,7 +124,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(0, 221);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(227, 428);
+            this.groupBox2.Size = new System.Drawing.Size(227, 470);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CHỨC NĂNG";
@@ -196,14 +196,14 @@
             this.dgvDsSinhVien.Location = new System.Drawing.Point(233, 221);
             this.dgvDsSinhVien.Name = "dgvDsSinhVien";
             this.dgvDsSinhVien.RowHeadersWidth = 51;
-            this.dgvDsSinhVien.Size = new System.Drawing.Size(939, 428);
+            this.dgvDsSinhVien.Size = new System.Drawing.Size(993, 470);
             this.dgvDsSinhVien.TabIndex = 3;
             // 
             // FrmTrangAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1232, 703);
             this.Controls.Add(this.dgvDsSinhVien);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

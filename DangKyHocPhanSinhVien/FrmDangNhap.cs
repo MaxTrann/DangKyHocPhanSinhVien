@@ -45,11 +45,21 @@ namespace DangKyHocPhanSinhVien
             }
             else if (check == 2)
             {
-
+                FrmTrangSinhVien sv = new FrmTrangSinhVien();
+                sv.ShowDialog();
+                txtDangNhap.ResetText();
+                txtMatKhau.ResetText();
+                this.Hide();
+                this.Show();
             }
             else if (check == 3)
             {
-
+                FrmTrangGiangVien gv = new FrmTrangGiangVien(); 
+                gv.ShowDialog();
+                txtDangNhap.ResetText();
+                txtMatKhau.ResetText();
+                this.Hide();
+                this.Show();
             }
             else
             {
