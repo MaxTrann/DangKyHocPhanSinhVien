@@ -41,7 +41,7 @@ namespace BusinessLayer
         // Thêm sinh viên 
         public bool ThemSV (ref string err, string TenDangNhap, string MatKhau, string HoTenSV, string GioiTinh, string NgaySinh, string MaLop)
         {
-            return db.MyExecuteNonQuery("sp_ThemSV", CommandType.StoredProcedure, ref err,
+            return db.MyExecuteNonQuery("Re_ThemSV", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@TenDangNhap", TenDangNhap),
                 new SqlParameter("@MatKhau", MatKhau),
                 new SqlParameter("@HoTenSV", HoTenSV),
@@ -52,13 +52,13 @@ namespace BusinessLayer
 
         public bool XoaSV(ref string err, string MaSV)
         {
-            return db.MyExecuteNonQuery("sp_XoaSV", CommandType.StoredProcedure, ref err,
+            return db.MyExecuteNonQuery("Re_XoaSV", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@MaSV", MaSV));
         }
 
         public bool CapNhatSV(ref string err, string MaSV, string HoTenSV, string GioiTinh, string NgaySinh, string MaLop)
         {
-            return db.MyExecuteNonQuery("sp_CapNhatSV", CommandType.StoredProcedure, ref err,
+            return db.MyExecuteNonQuery("Re_CapNhatSV", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@MaSV", MaSV),
                 new SqlParameter("@HoTenSV", HoTenSV),
                 new SqlParameter("@GioiTinh", GioiTinh),
