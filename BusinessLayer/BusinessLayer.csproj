@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBChuongTrinhDT.cs" />
+    <Compile Include="DBGiangVien.cs" />
+    <Compile Include="DBKhoa.cs" />
+    <Compile Include="DBLop.cs" />
     <Compile Include="DBMonHoc.cs" />
     <Compile Include="DBMonHoc_DaoTao.cs" />
+    <Compile Include="DBNganh.cs" />
     <Compile Include="DBQuanLy.cs" />
     <Compile Include="DBSinhVien.cs" />
     <Compile Include="DBTaiKhoan.cs" />
