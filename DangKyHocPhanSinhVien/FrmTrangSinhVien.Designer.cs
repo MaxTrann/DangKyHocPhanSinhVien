@@ -32,8 +32,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMaSV = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.txtTenSV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -84,18 +84,8 @@
             this.txtMaSV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSV.Location = new System.Drawing.Point(441, 32);
             this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(114, 32);
+            this.txtMaSV.Size = new System.Drawing.Size(114, 27);
             this.txtMaSV.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(366, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 28);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Mã SV: ";
             // 
             // btnThoat
             // 
@@ -107,6 +97,16 @@
             this.btnThoat.TabIndex = 3;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(366, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 21);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Mã SV: ";
             // 
             // btnDoiMatKhau
             // 
@@ -123,7 +123,7 @@
             this.txtTenSV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSV.Location = new System.Drawing.Point(116, 32);
             this.txtTenSV.Name = "txtTenSV";
-            this.txtTenSV.Size = new System.Drawing.Size(249, 32);
+            this.txtTenSV.Size = new System.Drawing.Size(249, 27);
             this.txtTenSV.TabIndex = 1;
             // 
             // label1
@@ -132,7 +132,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(20, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 28);
+            this.label1.Size = new System.Drawing.Size(81, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sinh viên: ";
             // 
@@ -183,6 +183,7 @@
             this.btnTraCuu.TabIndex = 1;
             this.btnTraCuu.Text = "Tra cứu học phần ";
             this.btnTraCuu.UseVisualStyleBackColor = false;
+            this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
             // 
             // btnDangKy
             // 
@@ -216,13 +217,13 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(501, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(374, 25);
+            this.label3.Size = new System.Drawing.Size(306, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "Danh sách học phần chương trình đào tạo";
             // 
             // FrmTrangSinhVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 703);
             this.Controls.Add(this.groupBox3);

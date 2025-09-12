@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace DangKyHocPhanSinhVien
 {
-    public partial class FrmTrangSinhVien : Form
+    public partial class FrmGiangVien : Form
     {
-        public FrmTrangSinhVien()
+        public FrmGiangVien()
         {
             InitializeComponent();
         }
 
-        private void FrmTrangSinhVien_Load(object sender, EventArgs e)
+        private void btnTimGV_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnTraCuu_Click(object sender, EventArgs e)
+        private void btnXoaGV_Click(object sender, EventArgs e)
         {
-            FrmTraCuuMonHoc frmTraCuuMonHoc = new FrmTraCuuMonHoc();
-            frmTraCuuMonHoc.Show();
+
         }
     }
 }

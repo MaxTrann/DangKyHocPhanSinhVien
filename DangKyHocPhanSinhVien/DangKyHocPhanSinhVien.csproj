@@ -58,6 +58,48 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGiangVien.Designer.cs">
+      <DependentUpon>FrmGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLopSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLopSV.Designer.cs">
+      <DependentUpon>FrmLopSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLyKhoaNganh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLyKhoaNganh.Designer.cs">
+      <DependentUpon>FrmQuanLyKhoaNganh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLyMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLyMonHoc.Designer.cs">
+      <DependentUpon>FrmQuanLyMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLyPhongHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLyPhongHoc.Designer.cs">
+      <DependentUpon>FrmQuanLyPhongHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLySinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLySinhVien.Designer.cs">
+      <DependentUpon>FrmQuanLySinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTraCuuMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTraCuuMonHoc.Designer.cs">
+      <DependentUpon>FrmTraCuuMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTrangAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +139,27 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGiangVien.resx">
+      <DependentUpon>FrmGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLopSV.resx">
+      <DependentUpon>FrmLopSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLyKhoaNganh.resx">
+      <DependentUpon>FrmQuanLyKhoaNganh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLyMonHoc.resx">
+      <DependentUpon>FrmQuanLyMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLyPhongHoc.resx">
+      <DependentUpon>FrmQuanLyPhongHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLySinhVien.resx">
+      <DependentUpon>FrmQuanLySinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTraCuuMonHoc.resx">
+      <DependentUpon>FrmTraCuuMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTrangAdmin.resx">
       <DependentUpon>FrmTrangAdmin.cs</DependentUpon>
