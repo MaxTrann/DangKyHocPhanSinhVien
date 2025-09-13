@@ -37,18 +37,28 @@ namespace BusinessLayer
             return db.MyExecuteQueryDataSet($"SELECT * FROM dbo.RTO_TimKiemNganh(N'{nganh}')", CommandType.Text);
         }
 
-        public bool ThemNganh(ref string err, string MaNganh, string TenNganh, string TenKhoa)
+        public bool ThemNganh(ref string err, string MaNganh, string TenNganh, string MaKhoa)
         {
             return db.MyExecuteNonQuery("Re_ThemNganh", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@MaNganh", MaNganh),
                 new SqlParameter("@TenNganh", TenNganh),
-                new SqlParameter("@TenKhoa", TenKhoa));
+                new SqlParameter("@MaKhoa", MaKhoa));
         }
 
         public bool XoaNganh(ref string err, string MaNganh)
         {
             return db.MyExecuteNonQuery("Re_XoaNganh", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@MaNganh", MaNganh));
+        }
+
+        public bool Exists(string maNganh)
+        {
+            var ds = db.MyExecuteDataSetParam(
+                "SELECT 1 FROM NGANH WHERE MaNganh = @MaNganh",
+                CommandType.Text,
+                new SqlParameter("@MaNganh", maNganh)
+            );
+            return ds.Tables[0].Rows.Count > 0;
         }
     }
 }

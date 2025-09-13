@@ -40,5 +40,14 @@ namespace BusinessLayer
             return db.MyExecuteNonQuery("Re_XoaMHDT", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@MaMHDT", MaMHDT));
         }   
+        public bool Exists(string maMHDT)
+        {
+            var ds = db.MyExecuteDataSetParam(
+                "SELECT 1 FROM MONHOC_DAOTAO WHERE MaMHDT = @MaMHDT",
+                CommandType.Text,
+                new SqlParameter("@MaMHDT", maMHDT)
+            );
+            return ds.Tables[0].Rows.Count > 0;
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace BusinessLayer
 
         public DataSet DSMonHoc()
         {
-            return db.MyExecuteQueryDataSet("SELECT * FROM NonP_DanhSachMH", CommandType.StoredProcedure);
+            return db.MyExecuteQueryDataSet("NonP_DanhSachMH", CommandType.StoredProcedure);
         }
 
         public DataSet TimKiemMH(String MaMH)
@@ -42,6 +42,16 @@ namespace BusinessLayer
         {
             return db.MyExecuteNonQuery("Re_XoaMH", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@MaMH", MaMH));
+        }
+
+        public bool Exists(string maMH)
+        {
+            var ds = db.MyExecuteDataSetParam(
+                "SELECT 1 FROM MONHOC WHERE MaMH = @MaMH",
+                CommandType.Text,
+                new SqlParameter("@MaMH", maMH)
+            );
+            return ds.Tables[0].Rows.Count > 0;
         }
     }
 }

@@ -48,5 +48,14 @@ namespace BusinessLayer
             return db.MyExecuteNonQuery("Re_XoaKhoa", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@MaKhoa", MaKhoa));
         }
+        public bool Exists(string maKhoa)
+        {
+            var ds = db.MyExecuteDataSetParam(
+                "SELECT 1 FROM KHOA WHERE MaKhoa = @MaKhoa",
+                CommandType.Text,
+                new SqlParameter("@MaKhoa", maKhoa)
+            );
+            return ds.Tables[0].Rows.Count > 0;
+        }
     }
 }

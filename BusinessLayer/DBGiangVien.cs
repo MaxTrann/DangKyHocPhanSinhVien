@@ -18,7 +18,7 @@ namespace BusinessLayer
 
         public DataSet DSGiangVien()
         {
-            return db.MyExecuteQueryDataSet("NonP_DanhSachCTDT", CommandType.StoredProcedure);
+            return db.MyExecuteQueryDataSet("NonP_DanhSachGV", CommandType.StoredProcedure);
         }
 
         public DataSet ThongTinGV(string MaGV)

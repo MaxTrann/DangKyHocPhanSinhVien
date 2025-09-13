@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXoaGV = new System.Windows.Forms.Button();
             this.btnTimGV = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaGV = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboKhoa = new System.Windows.Forms.ComboBox();
@@ -70,7 +70,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnXoaGV);
             this.panel2.Controls.Add(this.btnTimGV);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtMaGV);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(12, 74);
@@ -105,15 +105,15 @@
             this.btnTimGV.UseVisualStyleBackColor = false;
             this.btnTimGV.Click += new System.EventHandler(this.btnTimGV_Click);
             // 
-            // textBox1
+            // txtMaGV
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(165, 21);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 31);
-            this.textBox1.TabIndex = 2;
+            this.txtMaGV.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtMaGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaGV.Location = new System.Drawing.Point(165, 21);
+            this.txtMaGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaGV.Name = "txtMaGV";
+            this.txtMaGV.Size = new System.Drawing.Size(241, 31);
+            this.txtMaGV.TabIndex = 2;
             // 
             // label7
             // 
@@ -165,6 +165,7 @@
             this.btnThem.TabIndex = 59;
             this.btnThem.Text = "Thêm ";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label6
             // 
@@ -246,8 +247,10 @@
             this.dgvGiangVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGiangVien.Location = new System.Drawing.Point(12, 356);
             this.dgvGiangVien.Name = "dgvGiangVien";
+            this.dgvGiangVien.RowHeadersWidth = 51;
             this.dgvGiangVien.Size = new System.Drawing.Size(870, 321);
             this.dgvGiangVien.TabIndex = 84;
+            this.dgvGiangVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellClick);
             // 
             // btnBack
             // 
@@ -260,6 +263,7 @@
             this.btnBack.TabIndex = 113;
             this.btnBack.Text = "Quay trở lại";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FrmGiangVien
             // 
@@ -274,6 +278,7 @@
             this.Name = "FrmGiangVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGiangVien";
+            this.Load += new System.EventHandler(this.FrmGiangVien_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -289,7 +294,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnXoaGV;
         private System.Windows.Forms.Button btnTimGV;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaGV;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cboKhoa;

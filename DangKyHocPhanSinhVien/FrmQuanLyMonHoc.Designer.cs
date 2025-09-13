@@ -60,6 +60,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cboKhoaMH = new System.Windows.Forms.ComboBox();
             this.panelTimKiemMonHoc.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -119,6 +121,7 @@
             this.btnXoaMH.TabIndex = 70;
             this.btnXoaMH.Text = "Xóa ";
             this.btnXoaMH.UseVisualStyleBackColor = false;
+            this.btnXoaMH.Click += new System.EventHandler(this.btnXoaMH_Click);
             // 
             // btnTimMH
             // 
@@ -131,6 +134,7 @@
             this.btnTimMH.TabIndex = 59;
             this.btnTimMH.Text = "Tìm kiếm";
             this.btnTimMH.UseVisualStyleBackColor = false;
+            this.btnTimMH.Click += new System.EventHandler(this.btnTimMH_Click);
             // 
             // txtMaMonHoc
             // 
@@ -179,6 +183,7 @@
             this.btnXoaMHDT.TabIndex = 70;
             this.btnXoaMHDT.Text = "Xóa ";
             this.btnXoaMHDT.UseVisualStyleBackColor = false;
+            this.btnXoaMHDT.Click += new System.EventHandler(this.btnXoaMHDT_Click);
             // 
             // btnTimMHDT
             // 
@@ -191,6 +196,7 @@
             this.btnTimMHDT.TabIndex = 59;
             this.btnTimMHDT.Text = "Tìm kiếm";
             this.btnTimMHDT.UseVisualStyleBackColor = false;
+            this.btnTimMHDT.Click += new System.EventHandler(this.btnTimMHDT_Click);
             // 
             // txtMaMHDT
             // 
@@ -217,6 +223,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Snow;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cboKhoaMH);
+            this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.btnThemMonHoc);
             this.panel2.Controls.Add(this.txtNhapTinChi);
             this.panel2.Controls.Add(this.label8);
@@ -235,19 +243,20 @@
             // 
             this.btnThemMonHoc.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnThemMonHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemMonHoc.Location = new System.Drawing.Point(427, 53);
+            this.btnThemMonHoc.Location = new System.Drawing.Point(427, 68);
             this.btnThemMonHoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemMonHoc.Name = "btnThemMonHoc";
             this.btnThemMonHoc.Size = new System.Drawing.Size(95, 43);
             this.btnThemMonHoc.TabIndex = 80;
             this.btnThemMonHoc.Text = "Thêm";
             this.btnThemMonHoc.UseVisualStyleBackColor = false;
+            this.btnThemMonHoc.Click += new System.EventHandler(this.btnThemMonHoc_Click);
             // 
             // txtNhapTinChi
             // 
             this.txtNhapTinChi.BackColor = System.Drawing.SystemColors.Menu;
             this.txtNhapTinChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapTinChi.Location = new System.Drawing.Point(147, 102);
+            this.txtNhapTinChi.Location = new System.Drawing.Point(147, 96);
             this.txtNhapTinChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNhapTinChi.Name = "txtNhapTinChi";
             this.txtNhapTinChi.Size = new System.Drawing.Size(241, 26);
@@ -258,7 +267,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.SeaShell;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 106);
+            this.label8.Location = new System.Drawing.Point(13, 100);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 19);
             this.label8.TabIndex = 64;
@@ -337,6 +346,7 @@
             this.btnThemMHDT.TabIndex = 81;
             this.btnThemMHDT.Text = "Thêm";
             this.btnThemMHDT.UseVisualStyleBackColor = false;
+            this.btnThemMHDT.Click += new System.EventHandler(this.btnThemMHDT_Click);
             // 
             // cboNganh
             // 
@@ -439,6 +449,26 @@
             this.btnBack.TabIndex = 112;
             this.btnBack.Text = "Quay trở lại";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.SeaShell;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(13, 137);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(103, 19);
+            this.label12.TabIndex = 81;
+            this.label12.Text = "Khoa phụ trách";
+            // 
+            // cboKhoaMH
+            // 
+            this.cboKhoaMH.FormattingEnabled = true;
+            this.cboKhoaMH.Location = new System.Drawing.Point(147, 134);
+            this.cboKhoaMH.Name = "cboKhoaMH";
+            this.cboKhoaMH.Size = new System.Drawing.Size(241, 24);
+            this.cboKhoaMH.TabIndex = 111;
             // 
             // FrmQuanLyMonHoc
             // 
@@ -456,6 +486,7 @@
             this.Name = "FrmQuanLyMonHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmQuanLyMonHoc";
+            this.Load += new System.EventHandler(this.FrmQuanLyMonHoc_Load);
             this.panelTimKiemMonHoc.ResumeLayout(false);
             this.panelTimKiemMonHoc.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -503,5 +534,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox cboKhoaMH;
+        private System.Windows.Forms.Label label12;
     }
 }

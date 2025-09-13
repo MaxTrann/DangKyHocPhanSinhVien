@@ -25,6 +25,11 @@ namespace DangKyHocPhanSinhVien
         public FrmTrangAdmin()
         {
             InitializeComponent();
+            dgvDsSinhVien.ReadOnly = true;
+            dgvDsSinhVien.MultiSelect = false;
+            dgvDsSinhVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDsSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void FrmTrangAdmin_Load(object sender, EventArgs e)
