@@ -37,7 +37,7 @@
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.txtTenSV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvDsSinhVien = new System.Windows.Forms.DataGridView();
+            this.dgvShow = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTKB = new System.Windows.Forms.Button();
             this.btnTraCuu = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsSinhVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +84,7 @@
             this.txtMaSV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSV.Location = new System.Drawing.Point(441, 32);
             this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(114, 27);
+            this.txtMaSV.Size = new System.Drawing.Size(114, 32);
             this.txtMaSV.TabIndex = 5;
             // 
             // btnThoat
@@ -97,6 +97,7 @@
             this.btnThoat.TabIndex = 3;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label2
             // 
@@ -104,7 +105,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(366, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 21);
+            this.label2.Size = new System.Drawing.Size(77, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "Mã SV: ";
             // 
@@ -123,7 +124,7 @@
             this.txtTenSV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSV.Location = new System.Drawing.Point(116, 32);
             this.txtTenSV.Name = "txtTenSV";
-            this.txtTenSV.Size = new System.Drawing.Size(249, 27);
+            this.txtTenSV.Size = new System.Drawing.Size(249, 32);
             this.txtTenSV.TabIndex = 1;
             // 
             // label1
@@ -132,19 +133,19 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(20, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 21);
+            this.label1.Size = new System.Drawing.Size(100, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sinh viên: ";
             // 
-            // dgvDsSinhVien
+            // dgvShow
             // 
-            this.dgvDsSinhVien.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDsSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDsSinhVien.Location = new System.Drawing.Point(209, 306);
-            this.dgvDsSinhVien.Name = "dgvDsSinhVien";
-            this.dgvDsSinhVien.RowHeadersWidth = 51;
-            this.dgvDsSinhVien.Size = new System.Drawing.Size(1011, 385);
-            this.dgvDsSinhVien.TabIndex = 5;
+            this.dgvShow.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShow.Location = new System.Drawing.Point(209, 306);
+            this.dgvShow.Name = "dgvShow";
+            this.dgvShow.RowHeadersWidth = 51;
+            this.dgvShow.Size = new System.Drawing.Size(1011, 385);
+            this.dgvShow.TabIndex = 5;
             // 
             // groupBox2
             // 
@@ -217,17 +218,17 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(501, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 20);
+            this.label3.Size = new System.Drawing.Size(374, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Danh sách học phần chương trình đào tạo";
             // 
             // FrmTrangSinhVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 703);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.dgvDsSinhVien);
+            this.Controls.Add(this.dgvShow);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
@@ -239,7 +240,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsSinhVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -257,7 +258,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvDsSinhVien;
+        private System.Windows.Forms.DataGridView dgvShow;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnTKB;
         private System.Windows.Forms.Button btnTraCuu;

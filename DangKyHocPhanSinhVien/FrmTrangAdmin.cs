@@ -35,6 +35,7 @@ namespace DangKyHocPhanSinhVien
         private void FrmTrangAdmin_Load(object sender, EventArgs e)
         {
             this.txtTenQL.Text = ql.ThongTin(MaSo).Tables[0].Rows[0].Field<string>("TenQL");
+            txtTenQL.ReadOnly = true;
             this.dgvDsSinhVien.DataSource = sv.DSSinhVienDKMH().Tables[0];
 
             dgvDsSinhVien.Columns[0].HeaderText = "Mã Sinh Viên";

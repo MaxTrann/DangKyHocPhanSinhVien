@@ -45,6 +45,7 @@
     <Compile Include="DBGiangVien.cs" />
     <Compile Include="DBKhoa.cs" />
     <Compile Include="DBLop.cs" />
+    <Compile Include="DBLopHoc.cs" />
     <Compile Include="DBMonHoc.cs" />
     <Compile Include="DBMonHoc_DaoTao.cs" />
     <Compile Include="DBNganh.cs" />
