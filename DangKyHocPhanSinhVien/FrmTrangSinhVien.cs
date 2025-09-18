@@ -16,7 +16,7 @@ namespace DangKyHocPhanSinhVien
         private string maso;
         DBSinhVien sv = new DBSinhVien();
 
-        public string Maso 
+        public string MaSo
         {
             get { return maso; }
             set { maso = value; }
@@ -43,6 +43,7 @@ namespace DangKyHocPhanSinhVien
             dgvShow.Columns[0].HeaderText = "Mã môn học";
             dgvShow.Columns[1].HeaderText = "Tên môn học";
             dgvShow.Columns[2].HeaderText = "Số tín chỉ";
+            dgvShow.Columns[3].HeaderText = "Số LHP";
         }
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
@@ -60,6 +61,14 @@ namespace DangKyHocPhanSinhVien
             FrmDoiMatKhauSV dmk = new FrmDoiMatKhauSV();
             dmk.Maso = maso;
             dmk.ShowDialog();
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            FrmDanhSachHocPhan dk = new FrmDanhSachHocPhan();
+            dk.MaSo = maso;
+            dk.ShowDialog();
+
         }
     }
 }

@@ -17,7 +17,11 @@ namespace DangKyHocPhanSinhVien
         DBLopHoc lh = new DBLopHoc();
         DBGiangVien gv = new DBGiangVien();
 
-        public string Maso { get => maso; set => maso = value; }
+        public string MaSo
+        {
+            get { return maso; }
+            set { maso = value; }
+        }
         public FrmTrangGiangVien()
         {
             InitializeComponent();

@@ -142,10 +142,10 @@
             // 
             this.dgvShow.BackgroundColor = System.Drawing.Color.White;
             this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShow.Location = new System.Drawing.Point(209, 306);
+            this.dgvShow.Location = new System.Drawing.Point(238, 306);
             this.dgvShow.Name = "dgvShow";
             this.dgvShow.RowHeadersWidth = 51;
-            this.dgvShow.Size = new System.Drawing.Size(1011, 385);
+            this.dgvShow.Size = new System.Drawing.Size(982, 385);
             this.dgvShow.TabIndex = 5;
             // 
             // groupBox2
@@ -157,7 +157,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(5, 306);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(199, 385);
+            this.groupBox2.Size = new System.Drawing.Size(227, 385);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CHỨC NĂNG";
@@ -167,9 +167,9 @@
             this.btnTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTKB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTKB.Location = new System.Drawing.Point(10, 157);
+            this.btnTKB.Location = new System.Drawing.Point(10, 164);
             this.btnTKB.Name = "btnTKB";
-            this.btnTKB.Size = new System.Drawing.Size(165, 46);
+            this.btnTKB.Size = new System.Drawing.Size(211, 46);
             this.btnTKB.TabIndex = 2;
             this.btnTKB.Text = "Thời khóa biểu";
             this.btnTKB.UseVisualStyleBackColor = false;
@@ -179,9 +179,9 @@
             this.btnTraCuu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnTraCuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTraCuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuu.Location = new System.Drawing.Point(10, 95);
+            this.btnTraCuu.Location = new System.Drawing.Point(10, 100);
             this.btnTraCuu.Name = "btnTraCuu";
-            this.btnTraCuu.Size = new System.Drawing.Size(165, 46);
+            this.btnTraCuu.Size = new System.Drawing.Size(211, 46);
             this.btnTraCuu.TabIndex = 1;
             this.btnTraCuu.Text = "Tra cứu học phần ";
             this.btnTraCuu.UseVisualStyleBackColor = false;
@@ -192,12 +192,13 @@
             this.btnDangKy.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKy.Location = new System.Drawing.Point(10, 34);
+            this.btnDangKy.Location = new System.Drawing.Point(10, 39);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(165, 46);
+            this.btnDangKy.Size = new System.Drawing.Size(211, 46);
             this.btnDangKy.TabIndex = 0;
             this.btnDangKy.Text = "Đăng ký học phần";
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // groupBox3
             // 
