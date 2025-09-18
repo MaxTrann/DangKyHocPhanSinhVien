@@ -19,7 +19,7 @@ namespace BusinessLayer
 
         public DataSet DSLop()
         {
-            return db.MyExecuteQueryDataSet("SELECT * FROM NonP_DanhSachLop", CommandType.StoredProcedure);
+            return db.MyExecuteQueryDataSet("NonP_DanhSachLop", CommandType.StoredProcedure);
         }
 
         public DataSet DSSVLop(string MaLop)

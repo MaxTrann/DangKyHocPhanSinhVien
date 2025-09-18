@@ -25,7 +25,7 @@ namespace BusinessLayer
         // Hiển thị thông tin sinh viên
         public DataSet ThongTin(string MaSV)
         {
-            return db.MyExecuteQueryDataSet($"SELECT * FORM dbo.fn_ThongTinSV('{MaSV}')", CommandType.Text);
+            return db.MyExecuteQueryDataSet($"SELECT * FROM dbo.RTO_ThongTinSV('{MaSV}')", CommandType.Text);
         }
 
         // Hiển thị học phần chương trình đào tạo
@@ -56,10 +56,10 @@ namespace BusinessLayer
                 new SqlParameter("@MaSV", MaSV));
         }
 
-        public bool CapNhatSV(ref string err, string MaSV, string HoTenSV, string GioiTinh, string NgaySinh, string MaLop)
+        public bool CapNhatSV(ref string err, string TenDangNhap,  string HoTenSV, string GioiTinh, string NgaySinh, string MaLop)
         {
             return db.MyExecuteNonQuery("Re_CapNhatSV", CommandType.StoredProcedure, ref err,
-                new SqlParameter("@MaSV", MaSV),
+                new SqlParameter("@TenDangNhap", TenDangNhap),
                 new SqlParameter("@HoTenSV", HoTenSV),
                 new SqlParameter("@GioiTinh", GioiTinh),
                 new SqlParameter("@NgaySinh", NgaySinh),
