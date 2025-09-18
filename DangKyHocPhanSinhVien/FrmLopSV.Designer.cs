@@ -31,6 +31,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cboNganh = new System.Windows.Forms.ComboBox();
             this.cboCTDT = new System.Windows.Forms.ComboBox();
             this.txtNhapTenLop = new System.Windows.Forms.TextBox();
             this.lblLoai = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.txtNhapGioiTinh = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.txtNhapNgaySinh = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.panelTimKiemMonHoc = new System.Windows.Forms.Panel();
-            this.cboNganh = new System.Windows.Forms.ComboBox();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTin)).BeginInit();
@@ -121,6 +121,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(718, 241);
             this.panel2.TabIndex = 125;
+            // 
+            // cboNganh
+            // 
+            this.cboNganh.FormattingEnabled = true;
+            this.cboNganh.Location = new System.Drawing.Point(437, 14);
+            this.cboNganh.Margin = new System.Windows.Forms.Padding(4);
+            this.cboNganh.Name = "cboNganh";
+            this.cboNganh.Size = new System.Drawing.Size(248, 28);
+            this.cboNganh.TabIndex = 114;
             // 
             // cboCTDT
             // 
@@ -340,11 +349,11 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Snow;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.dtpNgaySinh);
             this.panel3.Controls.Add(this.btnThemSV);
             this.panel3.Controls.Add(this.btnCapNhat);
             this.panel3.Controls.Add(this.txtNhapGioiTinh);
             this.panel3.Controls.Add(this.txtHoTen);
-            this.panel3.Controls.Add(this.txtNhapNgaySinh);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
@@ -401,21 +410,11 @@
             // 
             this.txtHoTen.BackColor = System.Drawing.SystemColors.Menu;
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(211, 106);
+            this.txtHoTen.Location = new System.Drawing.Point(142, 113);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(172, 30);
+            this.txtHoTen.Size = new System.Drawing.Size(241, 30);
             this.txtHoTen.TabIndex = 90;
-            // 
-            // txtNhapNgaySinh
-            // 
-            this.txtNhapNgaySinh.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtNhapNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapNgaySinh.Location = new System.Drawing.Point(507, 106);
-            this.txtNhapNgaySinh.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txtNhapNgaySinh.Name = "txtNhapNgaySinh";
-            this.txtNhapNgaySinh.Size = new System.Drawing.Size(188, 30);
-            this.txtNhapNgaySinh.TabIndex = 89;
             // 
             // label14
             // 
@@ -468,7 +467,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.SeaShell;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 106);
+            this.label7.Location = new System.Drawing.Point(17, 117);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 22);
@@ -479,10 +478,10 @@
             // 
             this.txtNhapMatKhau.BackColor = System.Drawing.SystemColors.Menu;
             this.txtNhapMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapMatKhau.Location = new System.Drawing.Point(211, 62);
+            this.txtNhapMatKhau.Location = new System.Drawing.Point(142, 64);
             this.txtNhapMatKhau.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtNhapMatKhau.Name = "txtNhapMatKhau";
-            this.txtNhapMatKhau.Size = new System.Drawing.Size(172, 30);
+            this.txtNhapMatKhau.Size = new System.Drawing.Size(241, 30);
             this.txtNhapMatKhau.TabIndex = 83;
             // 
             // label9
@@ -490,7 +489,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.SeaShell;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(17, 62);
+            this.label9.Location = new System.Drawing.Point(17, 68);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 22);
@@ -547,14 +546,14 @@
             this.panelTimKiemMonHoc.Size = new System.Drawing.Size(717, 92);
             this.panelTimKiemMonHoc.TabIndex = 123;
             // 
-            // cboNganh
+            // dtpNgaySinh
             // 
-            this.cboNganh.FormattingEnabled = true;
-            this.cboNganh.Location = new System.Drawing.Point(437, 14);
-            this.cboNganh.Margin = new System.Windows.Forms.Padding(4);
-            this.cboNganh.Name = "cboNganh";
-            this.cboNganh.Size = new System.Drawing.Size(248, 28);
-            this.cboNganh.TabIndex = 114;
+            this.dtpNgaySinh.CustomFormat = "yyyy-MM-dd";
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(507, 109);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(188, 26);
+            this.dtpNgaySinh.TabIndex = 92;
             // 
             // FrmLopSV
             // 
@@ -614,7 +613,6 @@
         private System.Windows.Forms.Panel panelTimKiemMonHoc;
         private System.Windows.Forms.TextBox txtNhapGioiTinh;
         private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.TextBox txtNhapNgaySinh;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -627,5 +625,6 @@
         private System.Windows.Forms.Button btnThemSV;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.ComboBox cboNganh;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
     }
 }

@@ -56,14 +56,15 @@ namespace BusinessLayer
                 new SqlParameter("@MaSV", MaSV));
         }
 
-        public bool CapNhatSV(ref string err, string TenDangNhap,  string HoTenSV, string GioiTinh, string NgaySinh, string MaLop)
+        public bool CapNhatSV(ref string err, string TenDangNhap,  string HoTenSV, string GioiTinh, string NgaySinh, string MaLop, string newMaSV)
         {
             return db.MyExecuteNonQuery("Re_CapNhatSV", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@TenDangNhap", TenDangNhap),
                 new SqlParameter("@HoTenSV", HoTenSV),
                 new SqlParameter("@GioiTinh", GioiTinh),
                 new SqlParameter("@NgaySinh", NgaySinh),
-                new SqlParameter("@MaLop", MaLop));
+                new SqlParameter("@MaLop", MaLop),
+                new SqlParameter("@NewMaSV", newMaSV));
         }
 
     }

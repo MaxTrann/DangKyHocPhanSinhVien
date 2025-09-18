@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,21 @@ namespace DangKyHocPhanSinhVien
 {
     public partial class FrmTrangGiangVien : Form
     {
+        private string maso;
+        DBLopHoc lh = new DBLopHoc();
+        DBGiangVien gv = new DBGiangVien();
+
+        public string Maso { get => maso; set => maso = value; }
         public FrmTrangGiangVien()
         {
             InitializeComponent();
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            FrmDoiMatKhauGV dmk = new FrmDoiMatKhauGV();    
+            dmk.Maso = maso;
+            dmk.ShowDialog();
         }
     }
 }

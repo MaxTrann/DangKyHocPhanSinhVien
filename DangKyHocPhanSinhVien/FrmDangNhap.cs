@@ -46,6 +46,7 @@ namespace DangKyHocPhanSinhVien
             else if (check == 2)
             {
                 FrmTrangSinhVien sv = new FrmTrangSinhVien();
+                sv.Maso = txtDangNhap.Text.Trim(); // gán mã số để biết user nào đang đăng nhập
                 sv.ShowDialog();
                 txtDangNhap.ResetText();
                 txtMatKhau.ResetText();
@@ -54,7 +55,8 @@ namespace DangKyHocPhanSinhVien
             }
             else if (check == 3)
             {
-                FrmTrangGiangVien gv = new FrmTrangGiangVien(); 
+                FrmTrangGiangVien gv = new FrmTrangGiangVien();
+                gv.Maso = txtDangNhap.Text.Trim(); // gán mã số để biết user nào đang đăng nhập
                 gv.ShowDialog();
                 txtDangNhap.ResetText();
                 txtMatKhau.ResetText();

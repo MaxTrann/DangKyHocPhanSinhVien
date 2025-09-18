@@ -93,6 +93,7 @@
             this.btnDoiMatKhau.TabIndex = 2;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // txtTenGV
             // 

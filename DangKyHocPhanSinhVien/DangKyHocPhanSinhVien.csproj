@@ -58,6 +58,24 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDoiMatKhauAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDoiMatKhauAdmin.Designer.cs">
+      <DependentUpon>FrmDoiMatKhauAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDoiMatKhauGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDoiMatKhauGV.Designer.cs">
+      <DependentUpon>FrmDoiMatKhauGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDoiMatKhauSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDoiMatKhauSV.Designer.cs">
+      <DependentUpon>FrmDoiMatKhauSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +157,15 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDoiMatKhauAdmin.resx">
+      <DependentUpon>FrmDoiMatKhauAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDoiMatKhauGV.resx">
+      <DependentUpon>FrmDoiMatKhauGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDoiMatKhauSV.resx">
+      <DependentUpon>FrmDoiMatKhauSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGiangVien.resx">
       <DependentUpon>FrmGiangVien.cs</DependentUpon>

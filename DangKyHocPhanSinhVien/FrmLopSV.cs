@@ -45,9 +45,9 @@ namespace DangKyHocPhanSinhVien
                     txtHoTen.Text = row.Cells[1]?.Value?.ToString();
                     txtNhapGioiTinh.Text = row.Cells[2]?.Value?.ToString();
 
-                    var ngay = row.Cells[3]?.Value?.ToString();
-                    if (DateTime.TryParse(ngay, out var d)) txtNhapNgaySinh.Text = d.ToString("yyyy-MM-dd");
-                    else txtNhapNgaySinh.Text = ngay ?? string.Empty;
+                    if (DateTime.TryParse(row.Cells[3]?.Value?.ToString(), out var d))
+                        dtpNgaySinh.Value = d;
+
 
                     if (row.Cells.Count > 4)
                         txtNhapLop.Text = row.Cells[4]?.Value?.ToString() ?? string.Empty;
@@ -155,7 +155,7 @@ namespace DangKyHocPhanSinhVien
             cboCTDT.SelectedIndex = -1;
             txtNhapMatKhau.Clear();
             txtNhapMssv.Clear();
-            txtNhapNgaySinh.Clear();
+            dtpNgaySinh.Value = DateTime.Now;
             txtNhapTenLop.Clear();
 
             var ds = lop.DSSVLop(txtMaLop.Text);
@@ -215,7 +215,7 @@ namespace DangKyHocPhanSinhVien
             cboCTDT.SelectedIndex = -1;
             txtNhapMatKhau.Clear();
             txtNhapMssv.Clear();
-            txtNhapNgaySinh.Clear();
+            dtpNgaySinh.Value = DateTime.Now;
             txtNhapTenLop.Clear();
             if (string.IsNullOrEmpty(txtMaSV.Text))
             {
@@ -277,17 +277,32 @@ namespace DangKyHocPhanSinhVien
             }
         }
 
+        private bool SinhVienExists(string maSV)
+        {
+            try
+            {
+                var ds = sv.ThongTin(maSV);
+                return ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0;
+            }
+            catch
+            {
+                return false;
+            } 
+            
+        }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             try
             {
-                var maSV = string.IsNullOrWhiteSpace(txtMaSV.Text) ? txtNhapMssv.Text.Trim() : txtMaSV.Text.Trim();
+                var newMaSV = txtNhapMssv.Text.Trim();
+                var tenDangNhap = string.IsNullOrWhiteSpace(txtMaSV.Text) ? txtNhapMssv.Text.Trim() : txtMaSV.Text.Trim();
                 var hoTen = txtHoTen.Text.Trim();
                 var gioiTinh = txtNhapGioiTinh.Text.Trim();
-                var ngaySinh = txtNhapNgaySinh.Text.Trim();
+                var ngaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
                 var maLop = txtNhapLop.Text.Trim();
 
-                if (string.IsNullOrEmpty(maSV) ||
+
+                if (string.IsNullOrEmpty(tenDangNhap) ||
                     string.IsNullOrEmpty(hoTen) ||
                     string.IsNullOrEmpty(gioiTinh) ||
                     string.IsNullOrEmpty(ngaySinh) ||
@@ -297,11 +312,23 @@ namespace DangKyHocPhanSinhVien
                     return;
                 }
 
+                if (!SinhVienExists(tenDangNhap))
+                {
+                    MessageBox.Show($"Không tìm thấy sinh viên với mã sinh viên '{tenDangNhap}'. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (newMaSV != tenDangNhap && SinhVienExists(newMaSV))
+                {
+                    MessageBox.Show($"Mã sinh viên mới '{newMaSV}' đã tồn tại. Vui lòng chọn mã khác.",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 // Gợi ý format yyyy-MM-dd để SQL dễ parse (không bắt buộc)
                 if (DateTime.TryParse(ngaySinh, out var d)) ngaySinh = d.ToString("yyyy-MM-dd");
 
                 string err = "";
-                var kq = sv.CapNhatSV(ref err, maSV, hoTen, gioiTinh, ngaySinh, maLop);
+                var kq = sv.CapNhatSV(ref err, tenDangNhap, hoTen, gioiTinh, ngaySinh, maLop, newMaSV);
                 if (kq)
                 {
                     MessageBox.Show("Cập nhật sinh viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -319,6 +346,16 @@ namespace DangKyHocPhanSinhVien
                 MessageBox.Show("Cập nhật sinh viên thất bại. Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private bool LopExists(string maLop)
+        {
+            var ds = lop.DSLop();
+            if (ds == null || ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) 
+                return false;
+            return ds.Tables[0].AsEnumerable()
+             .Any(r => r["MaLop"].ToString() == maLop);
+
+        }
+
 
         private void btnThemSV_Click(object sender, EventArgs e)
         {
@@ -329,7 +366,8 @@ namespace DangKyHocPhanSinhVien
                 var hoTen = txtHoTen.Text.Trim();
                 var gioiTinh = txtNhapGioiTinh.Text.Trim();
                 var maLop = txtNhapLop.Text.Trim();
-                var ngaySinh = txtNhapNgaySinh.Text.Trim();
+                var ngaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+
 
                 if (string.IsNullOrEmpty(tenDangNhap) ||
                     string.IsNullOrEmpty(matKhau) ||
@@ -339,6 +377,12 @@ namespace DangKyHocPhanSinhVien
                     string.IsNullOrEmpty(maLop))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin sinh viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (!LopExists(maLop))
+                {
+                    MessageBox.Show($"Không tìm thấy lớp với mã lớp '{maLop}'. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -384,7 +428,7 @@ namespace DangKyHocPhanSinhVien
             txtNhapMatKhau.Clear();
             txtHoTen.Clear();
             txtNhapGioiTinh.Clear();
-            txtNhapNgaySinh.Clear();
+            dtpNgaySinh.Value = DateTime.Now;   
             txtNhapLop.Clear();   // textbox nhập mã lớp cho SV
         }
 

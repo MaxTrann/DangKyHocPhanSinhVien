@@ -83,5 +83,12 @@ namespace DangKyHocPhanSinhVien
         {
             this.Close();
         }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            FrmDoiMatKhauAdmin dmk = new FrmDoiMatKhauAdmin();
+            dmk.Maso = this.MaSo;
+            dmk.ShowDialog();
+        }
     }
 }

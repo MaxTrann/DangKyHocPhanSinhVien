@@ -95,13 +95,14 @@
             this.btnDoiMatKhau.TabIndex = 2;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // txtTenQL
             // 
             this.txtTenQL.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenQL.Location = new System.Drawing.Point(153, 29);
             this.txtTenQL.Name = "txtTenQL";
-            this.txtTenQL.Size = new System.Drawing.Size(284, 27);
+            this.txtTenQL.Size = new System.Drawing.Size(284, 32);
             this.txtTenQL.TabIndex = 1;
             // 
             // label1
@@ -110,7 +111,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 21);
+            this.label1.Size = new System.Drawing.Size(133, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản trị viên: ";
             // 
@@ -207,7 +208,7 @@
             // 
             // FrmTrangAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 703);
             this.Controls.Add(this.dgvDsSinhVien);

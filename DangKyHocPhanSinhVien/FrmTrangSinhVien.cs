@@ -16,7 +16,11 @@ namespace DangKyHocPhanSinhVien
         private string maso;
         DBSinhVien sv = new DBSinhVien();
 
-        public string Maso { get => maso; set => maso = value; }
+        public string Maso 
+        {
+            get { return maso; }
+            set { maso = value; }
+        }
         public FrmTrangSinhVien()
         {
             InitializeComponent();
@@ -49,6 +53,13 @@ namespace DangKyHocPhanSinhVien
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            FrmDoiMatKhauSV dmk = new FrmDoiMatKhauSV();
+            dmk.Maso = maso;
+            dmk.ShowDialog();
         }
     }
 }
