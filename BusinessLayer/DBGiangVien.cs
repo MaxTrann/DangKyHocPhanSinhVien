@@ -16,6 +16,11 @@ namespace BusinessLayer
             db = new DAL();
         }
 
+        public void GiangVienConnect()
+        {
+            db.changeStrConnectToGiangVien();
+        }
+
         public DataSet DSGiangVien()
         {
             return db.MyExecuteQueryDataSet("NonP_DanhSachGV", CommandType.StoredProcedure);

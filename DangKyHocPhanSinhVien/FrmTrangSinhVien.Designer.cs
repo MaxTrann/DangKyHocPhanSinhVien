@@ -82,8 +82,9 @@
             // txtMaSV
             // 
             this.txtMaSV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSV.Location = new System.Drawing.Point(441, 32);
+            this.txtMaSV.Location = new System.Drawing.Point(442, 32);
             this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.ReadOnly = true;
             this.txtMaSV.Size = new System.Drawing.Size(114, 32);
             this.txtMaSV.TabIndex = 5;
             // 
@@ -125,6 +126,7 @@
             this.txtTenSV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSV.Location = new System.Drawing.Point(116, 32);
             this.txtTenSV.Name = "txtTenSV";
+            this.txtTenSV.ReadOnly = true;
             this.txtTenSV.Size = new System.Drawing.Size(249, 32);
             this.txtTenSV.TabIndex = 1;
             // 

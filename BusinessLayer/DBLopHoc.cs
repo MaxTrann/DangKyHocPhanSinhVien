@@ -75,7 +75,15 @@ namespace BusinessLayer
         {
             return db.MyExecuteQueryDataSet($"SELECT * FROM RTO_DanhSachSVLopHoc('{MaLH}')", CommandType.Text);
         }
+        public DataSet ThoiKhoaBieuGV(String MaGV)
+        {
+            return db.MyExecuteQueryDataSet($"SELECT * FROM dbo.RTM_XemTKBGV(N'{MaGV}')", CommandType.Text);
+        }
 
+        public DataSet ChiTietLopHocGV(String MaGV)
+        {
+            return db.MyExecuteQueryDataSet($"SELECT * FROM dbo.RTM_ChiTietLHGV(N'{MaGV}')", CommandType.Text);
+        }
         public int TongSVLH(string MaLH)
         {
             return db.MyExecuteScalarFunction($"SELECT dbo.RNO_TongSVLopHoc(N'{MaLH}')");

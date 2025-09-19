@@ -49,5 +49,16 @@ namespace BusinessLayer
             );
             return ds.Tables[0].Rows.Count > 0;
         }
+
+        public bool ExistsByMaMH(string maMH)
+        {
+            var ds = db.MyExecuteDataSetParam(
+                "SELECT TOP 1 1 FROM MONHOC_DAOTAO WHERE MaMH = @MaMH",
+                CommandType.Text,
+                new SqlParameter("@MaMH", maMH)
+            );
+            return ds.Tables[0].Rows.Count > 0;
+        }
+
     }
 }

@@ -36,8 +36,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlThem = new System.Windows.Forms.Panel();
+            this.dtpTGKT = new System.Windows.Forms.DateTimePicker();
+            this.dtpTGBD = new System.Windows.Forms.DateTimePicker();
+            this.numTietKT = new System.Windows.Forms.NumericUpDown();
+            this.numTietBD = new System.Windows.Forms.NumericUpDown();
             this.cboHK = new System.Windows.Forms.ComboBox();
             this.cboGiangVien = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.cboThu = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.TextBox();
@@ -58,18 +63,13 @@
             this.txtNhapMaLopHoc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.dgvLopHoc = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
-            this.numTietBD = new System.Windows.Forms.NumericUpDown();
-            this.numTietKT = new System.Windows.Forms.NumericUpDown();
-            this.dtpTGBD = new System.Windows.Forms.DateTimePicker();
-            this.dtpTGKT = new System.Windows.Forms.DateTimePicker();
             this.pnlTimKiem.SuspendLayout();
             this.pnlThem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTietBD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTietKT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTietBD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -83,7 +83,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1453, 54);
             this.label4.TabIndex = 84;
-            this.label4.Text = "Quản lý phòng học ";
+            this.label4.Text = "Quản lý lớp học ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlTimKiem
@@ -194,6 +194,34 @@
             this.pnlThem.Size = new System.Drawing.Size(1453, 256);
             this.pnlThem.TabIndex = 86;
             // 
+            // dtpTGKT
+            // 
+            this.dtpTGKT.Location = new System.Drawing.Point(1081, 181);
+            this.dtpTGKT.Name = "dtpTGKT";
+            this.dtpTGKT.Size = new System.Drawing.Size(204, 32);
+            this.dtpTGKT.TabIndex = 108;
+            // 
+            // dtpTGBD
+            // 
+            this.dtpTGBD.Location = new System.Drawing.Point(1081, 127);
+            this.dtpTGBD.Name = "dtpTGBD";
+            this.dtpTGBD.Size = new System.Drawing.Size(204, 32);
+            this.dtpTGBD.TabIndex = 107;
+            // 
+            // numTietKT
+            // 
+            this.numTietKT.Location = new System.Drawing.Point(170, 181);
+            this.numTietKT.Name = "numTietKT";
+            this.numTietKT.Size = new System.Drawing.Size(163, 32);
+            this.numTietKT.TabIndex = 106;
+            // 
+            // numTietBD
+            // 
+            this.numTietBD.Location = new System.Drawing.Point(170, 127);
+            this.numTietBD.Name = "numTietBD";
+            this.numTietBD.Size = new System.Drawing.Size(163, 32);
+            this.numTietBD.TabIndex = 105;
+            // 
             // cboHK
             // 
             this.cboHK.FormattingEnabled = true;
@@ -209,6 +237,17 @@
             this.cboGiangVien.Name = "cboGiangVien";
             this.cboGiangVien.Size = new System.Drawing.Size(256, 34);
             this.cboGiangVien.TabIndex = 103;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(497, 131);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(76, 25);
+            this.label18.TabIndex = 101;
+            this.label18.Text = "Học kỳ";
             // 
             // cboThu
             // 
@@ -424,17 +463,6 @@
             this.label3.Size = new System.Drawing.Size(0, 26);
             this.label3.TabIndex = 0;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(497, 131);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(76, 25);
-            this.label18.TabIndex = 101;
-            this.label18.Text = "Học kỳ";
-            // 
             // dgvLopHoc
             // 
             this.dgvLopHoc.BackgroundColor = System.Drawing.Color.White;
@@ -461,34 +489,6 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // numTietBD
-            // 
-            this.numTietBD.Location = new System.Drawing.Point(170, 127);
-            this.numTietBD.Name = "numTietBD";
-            this.numTietBD.Size = new System.Drawing.Size(163, 32);
-            this.numTietBD.TabIndex = 105;
-            // 
-            // numTietKT
-            // 
-            this.numTietKT.Location = new System.Drawing.Point(170, 181);
-            this.numTietKT.Name = "numTietKT";
-            this.numTietKT.Size = new System.Drawing.Size(163, 32);
-            this.numTietKT.TabIndex = 106;
-            // 
-            // dtpTGBD
-            // 
-            this.dtpTGBD.Location = new System.Drawing.Point(1081, 127);
-            this.dtpTGBD.Name = "dtpTGBD";
-            this.dtpTGBD.Size = new System.Drawing.Size(204, 32);
-            this.dtpTGBD.TabIndex = 107;
-            // 
-            // dtpTGKT
-            // 
-            this.dtpTGKT.Location = new System.Drawing.Point(1081, 181);
-            this.dtpTGKT.Name = "dtpTGKT";
-            this.dtpTGKT.Size = new System.Drawing.Size(204, 32);
-            this.dtpTGKT.TabIndex = 108;
-            // 
             // FrmQuanLyPhongHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -508,9 +508,9 @@
             this.pnlTimKiem.PerformLayout();
             this.pnlThem.ResumeLayout(false);
             this.pnlThem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTietBD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTietKT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTietBD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).EndInit();
             this.ResumeLayout(false);
 
         }

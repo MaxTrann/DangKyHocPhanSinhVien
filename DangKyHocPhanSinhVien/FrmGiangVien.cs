@@ -135,6 +135,10 @@ namespace DangKyHocPhanSinhVien
                     txtNhapHoTen.Clear();
                     cboKhoa.SelectedIndex = -1; // bắt chọn lại
                 }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công! " + err);
+                }
             }
             catch (Exception ex)
             {

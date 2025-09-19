@@ -97,6 +97,7 @@ namespace DangKyHocPhanSinhVien
             loadcboMonHoc();
             loadcboNganh();
             loadcboCTDT();
+            loadKhoaMH();
         }
         public void loadKhoaMH()
         {
@@ -244,9 +245,9 @@ namespace DangKyHocPhanSinhVien
                 MessageBox.Show("Mã môn học không tồn tại.", "Thông báo");
                 return;
             }
-            if (mh.TimKiemMH(txtMaMonHoc.Text).Tables[0].Rows.Count > 0)
+            if (mhdt.ExistsByMaMH(txtMaMonHoc.Text))  
             {
-                MessageBox.Show("Không thể xóa môn học này vì nó đang được sử dụng trong môn học đào tạo.", "Thông báo");
+                MessageBox.Show("Không thể xóa vì môn học đang được dùng trong chương trình đào tạo.", "Thông báo");
                 return;
             }
             bool kq = false;

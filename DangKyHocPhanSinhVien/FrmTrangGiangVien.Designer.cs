@@ -35,14 +35,14 @@
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.txtTenGV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvDsSinhVien = new System.Windows.Forms.DataGridView();
+            this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDSLH = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsSinhVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,7 @@
             this.btnThoat.TabIndex = 3;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnDoiMatKhau
             // 
@@ -98,8 +99,9 @@
             // txtTenGV
             // 
             this.txtTenGV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenGV.Location = new System.Drawing.Point(121, 32);
+            this.txtTenGV.Location = new System.Drawing.Point(137, 32);
             this.txtTenGV.Name = "txtTenGV";
+            this.txtTenGV.ReadOnly = true;
             this.txtTenGV.Size = new System.Drawing.Size(249, 32);
             this.txtTenGV.TabIndex = 1;
             // 
@@ -113,15 +115,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Giảng viên:";
             // 
-            // dgvDsSinhVien
+            // dgvDanhSach
             // 
-            this.dgvDsSinhVien.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDsSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDsSinhVien.Location = new System.Drawing.Point(210, 294);
-            this.dgvDsSinhVien.Name = "dgvDsSinhVien";
-            this.dgvDsSinhVien.RowHeadersWidth = 51;
-            this.dgvDsSinhVien.Size = new System.Drawing.Size(1010, 397);
-            this.dgvDsSinhVien.TabIndex = 5;
+            this.dgvDanhSach.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSach.Location = new System.Drawing.Point(210, 294);
+            this.dgvDanhSach.Name = "dgvDanhSach";
+            this.dgvDanhSach.RowHeadersWidth = 51;
+            this.dgvDanhSach.Size = new System.Drawing.Size(1010, 397);
+            this.dgvDanhSach.TabIndex = 5;
             // 
             // groupBox2
             // 
@@ -146,6 +148,7 @@
             this.btnDSLH.TabIndex = 0;
             this.btnDSLH.Text = "Danh sách lớp học";
             this.btnDSLH.UseVisualStyleBackColor = false;
+            this.btnDSLH.Click += new System.EventHandler(this.btnDSLH_Click);
             // 
             // groupBox3
             // 
@@ -176,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 703);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.dgvDsSinhVien);
+            this.Controls.Add(this.dgvDanhSach);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
@@ -184,10 +187,11 @@
             this.Name = "FrmTrangGiangVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTrangGiangVien";
+            this.Load += new System.EventHandler(this.FrmTrangGiangVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsSinhVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -203,7 +207,7 @@
         private System.Windows.Forms.Button btnDoiMatKhau;
         private System.Windows.Forms.TextBox txtTenGV;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvDsSinhVien;
+        private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnDSLH;
         private System.Windows.Forms.GroupBox groupBox3;

@@ -70,6 +70,12 @@
     <Compile Include="FrmDanhSachHocPhan.Designer.cs">
       <DependentUpon>FrmDanhSachHocPhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDanhSachLopHocGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDanhSachLopHocGV.Designer.cs">
+      <DependentUpon>FrmDanhSachLopHocGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDoiMatKhauAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDanhSachHocPhan.resx">
       <DependentUpon>FrmDanhSachHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDanhSachLopHocGV.resx">
+      <DependentUpon>FrmDanhSachLopHocGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDoiMatKhauAdmin.resx">
       <DependentUpon>FrmDoiMatKhauAdmin.cs</DependentUpon>

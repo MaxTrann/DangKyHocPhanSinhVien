@@ -140,7 +140,7 @@
             this.btnQLPH.Name = "btnQLPH";
             this.btnQLPH.Size = new System.Drawing.Size(189, 43);
             this.btnQLPH.TabIndex = 4;
-            this.btnQLPH.Text = "Quản lý phòng học";
+            this.btnQLPH.Text = "Quản lý lớp học";
             this.btnQLPH.UseVisualStyleBackColor = false;
             this.btnQLPH.Click += new System.EventHandler(this.btnQLPH_Click);
             // 
