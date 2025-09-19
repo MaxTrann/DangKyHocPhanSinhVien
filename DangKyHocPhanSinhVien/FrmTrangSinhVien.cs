@@ -70,5 +70,12 @@ namespace DangKyHocPhanSinhVien
             dk.ShowDialog();
 
         }
+
+        private void btnTKB_Click(object sender, EventArgs e)
+        {
+            FrmThoiKhoaBieuSV tkb = new FrmThoiKhoaBieuSV();
+            tkb.MaSo = maso;
+            tkb.ShowDialog();
+        }
     }
 }

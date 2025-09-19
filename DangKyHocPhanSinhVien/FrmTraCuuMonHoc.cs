@@ -61,14 +61,15 @@ namespace DangKyHocPhanSinhVien
                 }
                 dgvDanhSachLopHoc.DataSource = ds.Tables[0];
                 dgvDanhSachLopHoc.Columns[0].HeaderText = "Mã lớp học";
-                dgvDanhSachLopHoc.Columns[1].HeaderText = "Mã giảng viên";
-                dgvDanhSachLopHoc.Columns[2].HeaderText = "Số lượng";
-                dgvDanhSachLopHoc.Columns[3].HeaderText = "Tên Phòng";
-                dgvDanhSachLopHoc.Columns[4].HeaderText = "Thứ";
-                dgvDanhSachLopHoc.Columns[5].HeaderText = "Tiết Bắt Đầu";
-                dgvDanhSachLopHoc.Columns[6].HeaderText = "Tiết Kết Thúc";
-                dgvDanhSachLopHoc.Columns[7].HeaderText = "Thời Gian Bắt Đầu";
-                dgvDanhSachLopHoc.Columns[8].HeaderText = "Thời gian Kết Thúc";
+                dgvDanhSachLopHoc.Columns[1].HeaderText = "Tên môn học";
+                dgvDanhSachLopHoc.Columns[2].HeaderText = "Mã giảng viên";
+                dgvDanhSachLopHoc.Columns[3].HeaderText = "Số lượng";
+                dgvDanhSachLopHoc.Columns[4].HeaderText = "Tên Phòng";
+                dgvDanhSachLopHoc.Columns[5].HeaderText = "Thứ";
+                dgvDanhSachLopHoc.Columns[6].HeaderText = "Tiết Bắt Đầu";
+                dgvDanhSachLopHoc.Columns[7].HeaderText = "Tiết Kết Thúc";
+                dgvDanhSachLopHoc.Columns[8].HeaderText = "Thời Gian Bắt Đầu";
+                dgvDanhSachLopHoc.Columns[9].HeaderText = "Thời gian Kết Thúc";
 
             }
             catch (Exception ex)

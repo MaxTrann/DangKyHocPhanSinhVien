@@ -173,6 +173,7 @@
             this.btnTKB.TabIndex = 2;
             this.btnTKB.Text = "Thời khóa biểu";
             this.btnTKB.UseVisualStyleBackColor = false;
+            this.btnTKB.Click += new System.EventHandler(this.btnTKB_Click);
             // 
             // btnTraCuu
             // 

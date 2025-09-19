@@ -59,12 +59,13 @@ namespace DangKyHocPhanSinhVien
                 dgvShow.Columns[0].HeaderText = "Mã lớp học";
                 dgvShow.Columns[1].HeaderText = "Tên giảng viên";
                 dgvShow.Columns[2].HeaderText = "Giới hạn";
-                dgvShow.Columns[3].HeaderText = "Phòng";
-                dgvShow.Columns[4].HeaderText = "Thứ";
-                dgvShow.Columns[5].HeaderText = "Tiết bắt đầu";
-                dgvShow.Columns[6].HeaderText = "Tiết kết thúc";
-                dgvShow.Columns[7].HeaderText = "Thời gian bắt đầu";
-                dgvShow.Columns[8].HeaderText = "Thời gian kết thúc";
+                dgvShow.Columns[3].HeaderText = "Đã đăng ký";
+                dgvShow.Columns[4].HeaderText = "Phòng";
+                dgvShow.Columns[5].HeaderText = "Thứ";
+                dgvShow.Columns[6].HeaderText = "Tiết bắt đầu";
+                dgvShow.Columns[7].HeaderText = "Tiết kết thúc";
+                dgvShow.Columns[8].HeaderText = "Thời gian bắt đầu";
+                dgvShow.Columns[9].HeaderText = "Thời gian kết thúc";
 
                 dgvShow.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -74,9 +75,10 @@ namespace DangKyHocPhanSinhVien
                 dgvShow.Columns[3].FillWeight = 10;  // Phòng
                 dgvShow.Columns[4].FillWeight = 10;  // Thứ
                 dgvShow.Columns[5].FillWeight = 10;  // Tiết bắt đầu
-                dgvShow.Columns[6].FillWeight = 10;  // Tiết kết thúc
-                dgvShow.Columns[7].FillWeight = 20;  // Thời gian bắt đầu
+                dgvShow.Columns[6].FillWeight = 15;  // Tiết kết thúc
+                dgvShow.Columns[7].FillWeight = 15;  // Thời gian bắt đầu
                 dgvShow.Columns[8].FillWeight = 20;  // Thời gian kết thúc
+                dgvShow.Columns[9].FillWeight = 20;
 
 
             }
