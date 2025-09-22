@@ -17,16 +17,6 @@ namespace BusinessLayer
             db = new DAL();
         }
 
-        public void SinhVienConnect()
-        {
-            db.changeStrConnectToSinhVien();
-        }
-
-        public void GiangVienConnect()
-        {
-            db.changeStrConnectToGiangVien();
-        }
-
         public DataSet DSLopHoc()
         {
             string sql = "SELECT * FROM LOPHOC";

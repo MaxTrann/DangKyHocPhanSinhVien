@@ -16,15 +16,7 @@ namespace BusinessLayer
         {
             db = new DAL();    
         } 
-        public void SinhVienConnect()
-        {
-            db.changeStrConnectToSinhVien();
-        }
 
-        public void GiangVienConnect()
-        {
-            db.changeStrConnectToGiangVien();
-        }
 
         // Thực hiện đăng nhập 
         public int DangNhap(string TenDangNhap, string MatKhau)

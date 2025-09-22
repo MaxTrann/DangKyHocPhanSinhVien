@@ -13,9 +13,12 @@ namespace DangKyHocPhanSinhVien
 {
     public partial class FrmThoiKhoaBieuSV : Form
     {
+        private const string FIXED_HOCKY = "HK1";
+        private const int FIXED_NAM = 2025;
         private string maso;
         DBLopHoc lh = new DBLopHoc();
         DBDangKy dk = new DBDangKy();
+        DBSinhVien sv = new DBSinhVien();
         public string MaSo
         {
             get { return maso; }
@@ -45,6 +48,9 @@ namespace DangKyHocPhanSinhVien
                 DataSet ds = lh.ThoiKhoaBieuSV(maso);
                 dgvDanhSach.DataSource = ds.Tables[0];
                 UpdateSTT();
+
+                int tong = sv.TongSoTinChiDK(maso, FIXED_HOCKY, FIXED_NAM);
+                txtSoTinChi.Text = tong.ToString();
             }
             catch (Exception ex)
             {

@@ -32,6 +32,8 @@
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.btnXoaDangKyLH = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSoTinChi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,11 +91,36 @@
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 651);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(285, 29);
+            this.label6.TabIndex = 113;
+            this.label6.Text = "Tổng số tín chỉ đã đăng ký ";
+            // 
+            // txtSoTinChi
+            // 
+            this.txtSoTinChi.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtSoTinChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoTinChi.Location = new System.Drawing.Point(301, 650);
+            this.txtSoTinChi.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtSoTinChi.Name = "txtSoTinChi";
+            this.txtSoTinChi.ReadOnly = true;
+            this.txtSoTinChi.Size = new System.Drawing.Size(66, 30);
+            this.txtSoTinChi.TabIndex = 114;
+            // 
             // FrmThoiKhoaBieuSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 721);
+            this.Controls.Add(this.txtSoTinChi);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnXoaDangKyLH);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.dgvDanhSach);
@@ -104,6 +131,7 @@
             this.Load += new System.EventHandler(this.FrmThoiKhoaBieuSV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,5 +141,7 @@
         private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.Button btnXoaDangKyLH;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtSoTinChi;
     }
 }

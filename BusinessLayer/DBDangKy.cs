@@ -14,12 +14,6 @@ namespace BusinessLayer
         {
             db = new DAL();
         }   
-
-        public void SinhVienConnect()
-        {
-            db.changeStrConnectToSinhVien();
-        }
-
         public bool DangKyLH(ref string err, string MaLopHoc, string MaSV)
         {
             return db.MyExecuteNonQuery("Re_DangKyLH", System.Data.CommandType.StoredProcedure, ref err,

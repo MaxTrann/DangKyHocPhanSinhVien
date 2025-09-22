@@ -23,19 +23,19 @@ namespace DataLayer
         }
         // Persist Security Info=False: nếu ai đọc đọc lại connection.ConnectionString thì không thấy User/Password nữa
         // 
-        public void changeStrConnectToSinhVien()
-        {
-            strConnect = "Data Source=.;Initial Catalog=QUANLYSINHVIEN;User ID=sinhvien;Password=sinhvien;Persist Security Info=False;MultipleActiveResultSets=True;";
-            conn = new SqlConnection(strConnect);
-            cmd = conn.CreateCommand();
-        }
+        //public void changeStrConnectToSinhVien()
+        //{
+        //    strConnect = "Data Source=.;Initial Catalog=QUANLYSINHVIEN;User ID=sinhvien;Password=sinhvien;Persist Security Info=False;MultipleActiveResultSets=True;";
+        //    conn = new SqlConnection(strConnect);
+        //    cmd = conn.CreateCommand();
+        //}
 
-        public void changeStrConnectToGiangVien()
-        {
-            strConnect = "Data Source=.;Initial Catalog=QUANLYSINHVIEN;User ID=giangvien;Password=giangvien;Persist Security Info=False;MultipleActiveResultSets=True;";
-            conn = new SqlConnection(strConnect);
-            cmd = conn.CreateCommand();
-        }
+        //public void changeStrConnectToGiangVien()
+        //{
+        //    strConnect = "Data Source=.;Initial Catalog=QUANLYSINHVIEN;User ID=giangvien;Password=giangvien;Persist Security Info=False;MultipleActiveResultSets=True;";
+        //    conn = new SqlConnection(strConnect);
+        //    cmd = conn.CreateCommand();
+        //}
 
         public DataSet MyExecuteQueryDataSet (string strSql, CommandType ct) // SELECT / EXEC SP không tham số -> trả về DataSet
         {
@@ -135,25 +135,6 @@ namespace DataLayer
                     result = count.Value;
                 }
                 return result;
-            }
-            finally { conn.Close(); }
-        }
-
-        public string MyExecuteQueryXML (string strSql, CommandType ct, params SqlParameter[] p) // chạy SELECT/SP và trả về chuỗi XML của DataSet
-        {
-            if (conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-            conn.Open();
-            try
-            {
-                cmd.CommandText = strSql;
-                cmd.CommandType = ct;
-                da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                return ds.GetXml();
             }
             finally { conn.Close(); }
         }

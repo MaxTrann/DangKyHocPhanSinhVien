@@ -17,10 +17,6 @@ namespace BusinessLayer
             db = new DAL();
         }
 
-        public void SinhVienConnect()
-        {
-            db.changeStrConnectToSinhVien();
-        }
 
         // Hiển thị thông tin sinh viên
         public DataSet ThongTin(string MaSV)
@@ -37,6 +33,11 @@ namespace BusinessLayer
         public DataSet DSSinhVienDKMH()
         {
             return db.MyExecuteQueryDataSet("NonP_DanhSachDKMH", CommandType.StoredProcedure);
+        }
+        // Tổng số tín chỉ đã đăng ký
+        public int TongSoTinChiDK(string MaSV, string HocKy, int Nam)
+        {
+            return db.MyExecuteScalarFunction($"SELECT dbo.RNO_TongSoTinChi('{MaSV}', '{HocKy}', '{Nam}')");
         }
         // Thêm sinh viên 
         public bool ThemSV (ref string err, string TenDangNhap, string MatKhau, string HoTenSV, string GioiTinh, string NgaySinh, string MaLop)
