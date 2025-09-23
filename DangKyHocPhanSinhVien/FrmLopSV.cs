@@ -294,12 +294,19 @@ namespace DangKyHocPhanSinhVien
         {
             try
             {
-                var newMaSV = txtNhapMssv.Text.Trim();
-                var tenDangNhap = string.IsNullOrWhiteSpace(txtMaSV.Text) ? txtNhapMssv.Text.Trim() : txtMaSV.Text.Trim();
+                // mã hiện tại trên form (đang được chọn/sửa)
+                var tenDangNhap = txtMaSV.Text?.Trim();
+
+                // mã mới người dùng nhập (có thể rỗng -> giữ nguyên)
+                var rawNewMaSV = txtNhapMssv.Text?.Trim();
+                var newMaSV = string.IsNullOrWhiteSpace(rawNewMaSV) ? null : rawNewMaSV;
+
                 var hoTen = txtHoTen.Text.Trim();
                 var gioiTinh = txtNhapGioiTinh.Text.Trim();
                 var ngaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
                 var maLop = txtNhapLop.Text.Trim();
+                // nếu để trống -> NULL để proc giữ mật khẩu cũ
+                var matKhau = string.IsNullOrWhiteSpace(txtNhapMatKhau.Text) ? null : txtNhapMatKhau.Text.Trim();
 
 
                 if (string.IsNullOrEmpty(tenDangNhap) ||
@@ -328,10 +335,13 @@ namespace DangKyHocPhanSinhVien
                 if (DateTime.TryParse(ngaySinh, out var d)) ngaySinh = d.ToString("yyyy-MM-dd");
 
                 string err = "";
-                var kq = sv.CapNhatSV(ref err, tenDangNhap, hoTen, gioiTinh, ngaySinh, maLop, newMaSV);
+                var kq = sv.CapNhatSV(ref err, tenDangNhap, matKhau,hoTen, gioiTinh, ngaySinh, maLop, newMaSV);
                 if (kq)
                 {
                     MessageBox.Show("Cập nhật sinh viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // nếu đổi mã, cập nhật lại UI cho đồng bộ
+                    if (!string.IsNullOrEmpty(newMaSV))
+                        txtMaSV.Text = newMaSV;
                     loadLop();
                     ClearStudentInputs();
                 }
