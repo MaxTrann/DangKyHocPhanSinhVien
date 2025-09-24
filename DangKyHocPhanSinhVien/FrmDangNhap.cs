@@ -31,8 +31,11 @@ namespace DangKyHocPhanSinhVien
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             lblThongBao.ResetText();
+            string username = txtDangNhap.Text.Trim();
+            string password = txtMatKhau.Text.Trim();
             string err = "Sai tên người dùng hoặc mật khẩu! Vui lòng nhập lại!";
-            int check = tk.DangNhap(txtDangNhap.Text.Trim(), txtMatKhau.Text.Trim());
+
+            int check = tk.DangNhap(username, password);
             if (check == 1)
             {
                 FrmTrangAdmin ad = new FrmTrangAdmin();

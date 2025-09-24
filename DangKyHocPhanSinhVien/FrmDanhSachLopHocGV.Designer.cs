@@ -167,6 +167,7 @@
             this.Controls.Add(this.dgvShow);
             this.Controls.Add(this.label4);
             this.Name = "FrmDanhSachLopHocGV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDanhSachLopHocGV";
             this.Load += new System.EventHandler(this.FrmDanhSachLopHocGV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();

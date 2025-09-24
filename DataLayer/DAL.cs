@@ -14,29 +14,13 @@ namespace DataLayer
         SqlCommand cmd = null;  
         SqlDataAdapter da = null;
 
-        string strConnect = "Data Source=.;Initial Catalog=QUANLYSINHVIEN;Integrated Security=True;";
+        private static string strConnect = "Data Source=.;Initial Catalog=QUANLYSINHVIEN;Integrated Security=True;";
 
         public DAL()
         {
             conn = new SqlConnection(strConnect);
             cmd = conn.CreateCommand();
         }
-        // Persist Security Info=False: nếu ai đọc đọc lại connection.ConnectionString thì không thấy User/Password nữa
-        // 
-        //public void changeStrConnectToSinhVien()
-        //{
-        //    strConnect = "Data Source=.;Initial Catalog=QUANLYSINHVIEN;User ID=sinhvien;Password=sinhvien;Persist Security Info=False;MultipleActiveResultSets=True;";
-        //    conn = new SqlConnection(strConnect);
-        //    cmd = conn.CreateCommand();
-        //}
-
-        //public void changeStrConnectToGiangVien()
-        //{
-        //    strConnect = "Data Source=.;Initial Catalog=QUANLYSINHVIEN;User ID=giangvien;Password=giangvien;Persist Security Info=False;MultipleActiveResultSets=True;";
-        //    conn = new SqlConnection(strConnect);
-        //    cmd = conn.CreateCommand();
-        //}
-
         public DataSet MyExecuteQueryDataSet (string strSql, CommandType ct) // SELECT / EXEC SP không tham số -> trả về DataSet
         {
             if (conn.State == ConnectionState.Open)

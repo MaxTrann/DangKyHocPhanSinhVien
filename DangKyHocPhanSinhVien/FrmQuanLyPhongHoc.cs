@@ -23,7 +23,10 @@ namespace DangKyHocPhanSinhVien
             dgvLopHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvLopHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            dgvLopHoc.CellDoubleClick += dgvLopHoc_CellDoubleClick;
+
         }
+
         public void loadGiangVien()
         {
             var dt = gv.DSGiangVien().Tables[0];
@@ -246,6 +249,23 @@ namespace DangKyHocPhanSinhVien
             this.Close();
         }
 
-        
+        private void dgvLopHoc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || dgvLopHoc.CurrentRow == null) return;
+
+            // Theo thứ tự cột bạn đang set header ở loadDSLopHoc():
+            // 0 = MaLopHoc, 2 = MaGV
+            string maLH = dgvLopHoc.CurrentRow.Cells[0]?.Value?.ToString();
+            string maGV = dgvLopHoc.CurrentRow.Cells[2]?.Value?.ToString();
+
+            if (string.IsNullOrWhiteSpace(maLH)) return;
+
+            // Mở form chi tiết (dgv trong form chi tiết tên là dgvShow, label1 hiển thị mã lớp)
+            var f = new FrmChiTietLopHocAdmin(maLH, maGV);
+            f.ShowDialog(this);
+        }
+
+
+
     }
 }
