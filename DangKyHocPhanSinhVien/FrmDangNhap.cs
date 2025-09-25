@@ -36,35 +36,44 @@ namespace DangKyHocPhanSinhVien
             string err = "Sai tên người dùng hoặc mật khẩu! Vui lòng nhập lại!";
 
             int check = tk.DangNhap(username, password);
-            if (check == 1)
+            if (check > 0) // đăng nhập thành công
             {
-                FrmTrangAdmin ad = new FrmTrangAdmin();
-                ad.MaSo = txtDangNhap.Text.Trim(); // gán mã số để biết user nào đang đăng nhập
-                ad.ShowDialog(); // mở form
+                // === ĐỔI CONNECTION STRING TOÀN CỤC ===
+                DataLayer.DAL.SetConnection(username, password);
+
+                // 2) (Debug) xác minh kết nối đang là ai
+                //var dal = new DataLayer.DAL(); // tạo DAL mới để dùng chuỗi vừa set
+                //var who = dal.MyExecuteQueryDataSet(
+                //    "SELECT SYSTEM_USER, ORIGINAL_LOGIN()", CommandType.Text);
+                //MessageBox.Show($"SYSTEM_USER={who.Tables[0].Rows[0][0]}; ORIGINAL_LOGIN={who.Tables[0].Rows[0][1]}");
+
+                if (check == 1) // quản lý
+                {
+                    FrmTrangAdmin ad = new FrmTrangAdmin();
+                    ad.MaSo = username;
+                    this.Hide();
+                    ad.ShowDialog();
+                    this.Show();
+                }
+                else if (check == 2) // sinh viên
+                {
+                    FrmTrangSinhVien sv = new FrmTrangSinhVien();
+                    sv.MaSo = username;
+                    this.Hide();
+                    sv.ShowDialog();
+                    this.Show();
+                }
+                else if (check == 3) // giảng viên
+                {
+                    FrmTrangGiangVien gv = new FrmTrangGiangVien();
+                    gv.MaSo = username;
+                    this.Hide();
+                    gv.ShowDialog();
+                    this.Show();
+                }
+
                 txtDangNhap.ResetText();
                 txtMatKhau.ResetText();
-                this.Hide();
-                this.Show();
-            }
-            else if (check == 2)
-            {
-                FrmTrangSinhVien sv = new FrmTrangSinhVien();
-                sv.MaSo = txtDangNhap.Text.Trim(); // gán mã số để biết user nào đang đăng nhập
-                sv.ShowDialog();
-                txtDangNhap.ResetText();
-                txtMatKhau.ResetText();
-                this.Hide();
-                this.Show();
-            }
-            else if (check == 3)
-            {
-                FrmTrangGiangVien gv = new FrmTrangGiangVien();
-                gv.MaSo = txtDangNhap.Text.Trim(); // gán mã số để biết user nào đang đăng nhập
-                gv.ShowDialog();
-                txtDangNhap.ResetText();
-                txtMatKhau.ResetText();
-                this.Hide();
-                this.Show();
             }
             else
             {

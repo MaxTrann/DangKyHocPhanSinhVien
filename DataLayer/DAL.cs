@@ -21,6 +21,15 @@ namespace DataLayer
             conn = new SqlConnection(strConnect);
             cmd = conn.CreateCommand();
         }
+
+        // ====== Hàm thay đổi connection string động ======
+        public static void SetConnection(string username, string password)
+        {
+            strConnect = $"Data Source=.;Initial Catalog=QUANLYSINHVIEN;" +
+                         $"User ID={username};Password={password};" +
+                         "Encrypt=True;TrustServerCertificate=True;";
+        }
+
         public DataSet MyExecuteQueryDataSet (string strSql, CommandType ct) // SELECT / EXEC SP không tham số -> trả về DataSet
         {
             if (conn.State == ConnectionState.Open)
