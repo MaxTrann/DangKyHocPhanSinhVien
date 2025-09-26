@@ -99,6 +99,10 @@ namespace DangKyHocPhanSinhVien
                     LoadGiangVien();
                     MessageBox.Show("Xóa thành công!");
                 }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại!\n" + err, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {

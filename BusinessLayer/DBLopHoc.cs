@@ -19,8 +19,9 @@ namespace BusinessLayer
 
         public DataSet DSLopHoc()
         {
-            string sql = "SELECT * FROM LOPHOC";
-            return db.MyExecuteQueryDataSet(sql, CommandType.Text);
+            //string sql = "SELECT * FROM LOPHOC";
+            //return db.MyExecuteQueryDataSet(sql, CommandType.Text);
+            return db.MyExecuteQueryDataSet("NonP_DanhSachLopHoc",  CommandType.StoredProcedure);
         }
 
         public DataSet TimLopHoc(string MaLH)
