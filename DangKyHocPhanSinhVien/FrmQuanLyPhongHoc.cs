@@ -24,6 +24,7 @@ namespace DangKyHocPhanSinhVien
             dgvLopHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgvLopHoc.CellDoubleClick += dgvLopHoc_CellDoubleClick;
+            dgvLopHoc.CellClick += dgvLopHoc_CellClick;
 
         }
 
@@ -264,7 +265,15 @@ namespace DangKyHocPhanSinhVien
             var f = new FrmChiTietLopHocAdmin(maLH, maGV);
             f.ShowDialog(this);
         }
+        private void dgvLopHoc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || dgvLopHoc.CurrentRow == null) return;
 
+            // Theo thứ tự header bạn đã set ở loadDSLopHoc(): cột 0 = "Mã lớp học"
+            var maLH = dgvLopHoc.CurrentRow.Cells[0]?.Value?.ToString();
+            if (!string.IsNullOrWhiteSpace(maLH))
+                txtMaLopHoc.Text = maLH;
+        }
 
 
     }

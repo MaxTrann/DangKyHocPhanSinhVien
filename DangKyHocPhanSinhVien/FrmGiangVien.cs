@@ -15,6 +15,9 @@ namespace DangKyHocPhanSinhVien
     {
         DBKhoa khoa = new DBKhoa();
         DBGiangVien gv = new DBGiangVien();
+        DBLopHoc lh = new DBLopHoc();
+        private enum GridMode { DanhSachGV, LichDay }
+        private GridMode _mode = GridMode.DanhSachGV;
         public FrmGiangVien()
         {
             InitializeComponent();
@@ -22,6 +25,8 @@ namespace DangKyHocPhanSinhVien
             dgvGiangVien.MultiSelect = false;
             dgvGiangVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvGiangVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvGiangVien.CellDoubleClick += dgvGiangVien_CellDoubleClick;
         }
         public void LoadGiangVien()
         {
@@ -33,6 +38,8 @@ namespace DangKyHocPhanSinhVien
             dgvGiangVien.Columns[0].Width = 100;
             dgvGiangVien.Columns[1].Width = 120;
             dgvGiangVien.Columns[2].Width = 250;
+
+            _mode = GridMode.DanhSachGV;         // <— đánh dấu
 
         }
 
@@ -59,7 +66,8 @@ namespace DangKyHocPhanSinhVien
         {
             if (txtMaGV.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập mã giảng viên cần tìm!", "Thông báo", MessageBoxButtons.OK);
+                //MessageBox.Show("Vui lòng nhập mã giảng viên cần tìm!", "Thông báo", MessageBoxButtons.OK);
+                LoadGiangVien();
                 return;
             }
             DataSet ds = gv.ThongTinGV(txtMaGV.Text);
@@ -164,5 +172,48 @@ namespace DangKyHocPhanSinhVien
                 txtMaGV.Text = row.Cells[0].Value.ToString();
             }
         }
+
+        private void dgvGiangVien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            var maGV = dgvGiangVien.Rows[e.RowIndex].Cells[0]?.Value?.ToString();
+            if (string.IsNullOrWhiteSpace(maGV)) return;
+
+            //txtMaGV.Text = maGV;          // đổ mã GV vào textbox (nếu bạn muốn hiển thị)
+            ShowLichDayGiangVien();       // gọi hàm xem lịch (đã viết ở phần trước)
+        }
+
+        private void ShowLichDayGiangVien()
+        {
+            //if (string.IsNullOrWhiteSpace(txtMaGV.Text))
+            //{
+            //    MessageBox.Show("Vui lòng chọn hoặc nhập mã giảng viên!");
+            //    return;
+            //}
+            var ds = lh.LichDayGiangVien(txtMaGV.Text.Trim(), "HK1", 2025);
+            var dt = ds.Tables[0];
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có lịch đứng lớp cho giảng viên này theo điều kiện lọc.");
+                return;
+            }
+
+            dgvGiangVien.DataSource = dt;
+
+            dgvGiangVien.Columns["MaLopHoc"].HeaderText = "Mã lớp học";
+            dgvGiangVien.Columns["MaMHDT"].HeaderText = "Mã MHĐT";
+            dgvGiangVien.Columns["TenMH"].HeaderText = "Tên môn";
+            dgvGiangVien.Columns["SoTinChi"].HeaderText = "Số TC";
+            dgvGiangVien.Columns["TenPhong"].HeaderText = "Phòng";
+            dgvGiangVien.Columns["Thu"].HeaderText = "Thứ";
+            dgvGiangVien.Columns["TietBatDau"].HeaderText = "Tiết BĐ";
+            dgvGiangVien.Columns["TietKetThuc"].HeaderText = "Tiết KT";
+            dgvGiangVien.Columns["ThoiGianBatDau"].HeaderText = "Bắt đầu";
+            dgvGiangVien.Columns["ThoiGianKetThuc"].HeaderText = "Kết thúc";
+            dgvGiangVien.Columns["HocKy"].HeaderText = "Học kỳ";
+            dgvGiangVien.Columns["Nam"].HeaderText = "Năm";
+        }
+
+
     }
 }

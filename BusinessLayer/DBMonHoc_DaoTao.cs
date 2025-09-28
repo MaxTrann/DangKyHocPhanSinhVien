@@ -26,6 +26,10 @@ namespace BusinessLayer
         {
             return db.MyExecuteQueryDataSet($"SELECT * FROM RTO_TimKiemMHDT('{MaMDHT}')", CommandType.Text);
         }
+        public DataSet DanhSachMHDT_ByMaMH(string MaMH)
+        {
+            return db.MyExecuteDataSetParam($"HasP_DanhSachMHDT_ByMaMH", CommandType.StoredProcedure, new SqlParameter("@MaMH", MaMH));
+        }
 
         public bool ThemMHDT (ref string err, string MaMHDT, string MaMH, string MaCTDT, string MaNganh)
         {

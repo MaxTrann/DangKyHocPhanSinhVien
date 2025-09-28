@@ -27,6 +27,7 @@ namespace DangKyHocPhanSinhVien
             dgvThongTin.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgvThongTin.CellClick += dgvThongTin_CellClick;
+            dgvThongTin.CellDoubleClick += dgvThongTin_CellDoubleClick;
         }
 
         private void dgvThongTin_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -91,6 +92,21 @@ namespace DangKyHocPhanSinhVien
             {
                 MessageBox.Show("Đã xảy ra lỗi khi chọn dòng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void dgvThongTin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || dgvThongTin.CurrentRow == null) return;
+
+            // Chỉ xử lý khi grid đang hiển thị danh sách sinh viên
+            if (!IsShowingStudents()) return;
+
+            var maSV = dgvThongTin.CurrentRow.Cells[0]?.Value?.ToString();
+            if (string.IsNullOrWhiteSpace(maSV)) return;
+
+            // Mở form TKB và nạp dữ liệu
+            var f = new FrmThoiKhoaBieuSV { MaSo = maSV };
+            f.loadTKB();              // gọi hàm đã có để bind dữ liệu
+            f.ShowDialog(this);
         }
         public void loadNganh()
         {

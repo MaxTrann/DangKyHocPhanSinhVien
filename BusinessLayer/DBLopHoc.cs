@@ -85,5 +85,12 @@ namespace BusinessLayer
             return db.MyExecuteQueryDataSet($"SELECT * FROM RTM_TimKiemLHDK('{MaLH}', '{MaSV}')", CommandType.Text);
 
         }
+        public DataSet LichDayGiangVien(string MaGV, string HocKy, int Nam)
+        {
+            return db.MyExecuteDataSetParam("HasP_LichDay_ByGV", CommandType.StoredProcedure,
+                new SqlParameter("@MaGV", MaGV),
+                new SqlParameter("@HocKy", HocKy),
+                new SqlParameter("@Nam", Nam));
+        }
     }
 }

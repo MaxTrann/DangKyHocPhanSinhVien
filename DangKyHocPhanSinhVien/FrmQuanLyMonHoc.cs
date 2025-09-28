@@ -18,6 +18,9 @@ namespace DangKyHocPhanSinhVien
         DBNganh nganh = new DBNganh();
         DBChuongTrinhDT ctdt = new DBChuongTrinhDT();
         DBKhoa khoa = new DBKhoa();
+        private enum GridMode { MonHoc, MonHocDaoTao }
+        private GridMode _gridMode = GridMode.MonHoc;
+
         public FrmQuanLyMonHoc()
         {
             InitializeComponent();
@@ -25,6 +28,9 @@ namespace DangKyHocPhanSinhVien
             dgvDanhSach.MultiSelect = false;
             dgvDanhSach.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDanhSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvDanhSach.CellClick += dgvDanhSach_CellClick;
+
         }
 
         public void loadMHDT()
@@ -45,6 +51,7 @@ namespace DangKyHocPhanSinhVien
             dgvDanhSach.Columns[0].Width = 100;
             dgvDanhSach.Columns[1].Width = 200;
             dgvDanhSach.Columns[5].Width = 200;
+            _gridMode = GridMode.MonHocDaoTao;
         }
 
         public void loadMonHoc()
@@ -53,6 +60,7 @@ namespace DangKyHocPhanSinhVien
             dgvDanhSach.Columns[0].HeaderText = "Mã Môn Học";
             dgvDanhSach.Columns[1].HeaderText = "Tên Môn Học";
             dgvDanhSach.Columns[2].HeaderText = "Số Tín Chỉ";
+            _gridMode = GridMode.MonHoc;
         }
 
         public void loadcboMonHoc()
@@ -203,11 +211,25 @@ namespace DangKyHocPhanSinhVien
                 MessageBox.Show("Không tìm thấy môn học phù hợp.", "Thông báo");
                 return;
             }
-            dgvDanhSach.DataSource = ds.Tables[0];
-            dgvDanhSach.Columns[0].HeaderText = "Mã Môn Học";
+
+            var dsMHDT = mhdt.DanhSachMHDT_ByMaMH(txtMaMonHoc.Text);
+            if (dsMHDT.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("Môn học có tồn tại nhưng chưa liên kết chương trình đào tạo nào.", "Thông báo");
+                // Nếu muốn fallback về hiển thị chính record Môn học thì:
+                loadMonHoc(); // hoặc dgvDanhSach.DataSource = dsMon.Tables[0];
+                return;
+            }
+
+            dgvDanhSach.DataSource = dsMHDT.Tables[0];
+            dgvDanhSach.Columns[0].HeaderText = "Mã MHDT";
             dgvDanhSach.Columns[1].HeaderText = "Tên Môn Học";
-            dgvDanhSach.Columns[2].HeaderText = "Số Tín Chỉ";
-            dgvDanhSach.Columns[3].HeaderText = "Mã Khoa Phụ Trách";
+            dgvDanhSach.Columns[2].HeaderText = "Số tín chỉ";
+            dgvDanhSach.Columns[3].HeaderText = "Tên Chương Trình Đào Tạo";
+            dgvDanhSach.Columns[4].HeaderText = "Ngôn Ngữ Đào Tạo";
+            dgvDanhSach.Columns[5].HeaderText = "Tên Ngành";
+
+            _gridMode = GridMode.MonHocDaoTao; // cập nhật trạng thái để CellClick đổ đúng textbox
         }
 
         private void btnTimMHDT_Click(object sender, EventArgs e)
@@ -311,5 +333,24 @@ namespace DangKyHocPhanSinhVien
         {
             this.Close();
         }
+
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || dgvDanhSach.CurrentRow == null) return;
+
+            if (_gridMode == GridMode.MonHoc)
+            {
+                var maMH = dgvDanhSach.CurrentRow.Cells[0]?.Value?.ToString();
+                if (!string.IsNullOrWhiteSpace(maMH))
+                    txtMaMonHoc.Text = maMH;
+            }
+            else // MH Đào tạo
+            {
+                var maMHDT = dgvDanhSach.CurrentRow.Cells[0]?.Value?.ToString();
+                if (!string.IsNullOrWhiteSpace(maMHDT))
+                    txtMaMHDT.Text = maMHDT;
+            }
+        }
+
     }
 }
