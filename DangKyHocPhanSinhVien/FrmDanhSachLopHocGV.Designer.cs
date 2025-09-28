@@ -52,7 +52,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1321, 65);
             this.label4.TabIndex = 64;
-            this.label4.Text = "Đăng ký môn học";
+            this.label4.Text = "Danh sách lớp học";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvShow

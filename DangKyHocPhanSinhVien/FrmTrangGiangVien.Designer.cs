@@ -32,7 +32,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.txtTenGV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
@@ -61,7 +60,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnThoat);
-            this.groupBox1.Controls.Add(this.btnDoiMatKhau);
             this.groupBox1.Controls.Add(this.txtTenGV);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -84,17 +82,6 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(979, 25);
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(116, 39);
-            this.btnDoiMatKhau.TabIndex = 2;
-            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
-            this.btnDoiMatKhau.UseVisualStyleBackColor = true;
-            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // txtTenGV
             // 
@@ -119,10 +106,10 @@
             // 
             this.dgvDanhSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSach.Location = new System.Drawing.Point(210, 294);
+            this.dgvDanhSach.Location = new System.Drawing.Point(222, 294);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowHeadersWidth = 51;
-            this.dgvDanhSach.Size = new System.Drawing.Size(1010, 397);
+            this.dgvDanhSach.Size = new System.Drawing.Size(998, 397);
             this.dgvDanhSach.TabIndex = 5;
             // 
             // groupBox2
@@ -132,7 +119,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(5, 294);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(199, 397);
+            this.groupBox2.Size = new System.Drawing.Size(211, 397);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CHỨC NĂNG";
@@ -144,7 +131,7 @@
             this.btnDSLH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDSLH.Location = new System.Drawing.Point(10, 41);
             this.btnDSLH.Name = "btnDSLH";
-            this.btnDSLH.Size = new System.Drawing.Size(165, 46);
+            this.btnDSLH.Size = new System.Drawing.Size(195, 46);
             this.btnDSLH.TabIndex = 0;
             this.btnDSLH.Text = "Danh sách lớp học";
             this.btnDSLH.UseVisualStyleBackColor = false;
@@ -204,7 +191,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnDoiMatKhau;
         private System.Windows.Forms.TextBox txtTenGV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDanhSach;

@@ -100,7 +100,7 @@
             // txtTenQL
             // 
             this.txtTenQL.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenQL.Location = new System.Drawing.Point(153, 29);
+            this.txtTenQL.Location = new System.Drawing.Point(110, 30);
             this.txtTenQL.Name = "txtTenQL";
             this.txtTenQL.Size = new System.Drawing.Size(284, 32);
             this.txtTenQL.TabIndex = 1;
@@ -111,9 +111,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 28);
+            this.label1.Size = new System.Drawing.Size(88, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản trị viên: ";
+            this.label1.Text = "Quản lý: ";
             // 
             // groupBox2
             // 

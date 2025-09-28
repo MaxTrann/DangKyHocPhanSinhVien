@@ -34,7 +34,6 @@
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.txtTenSV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvShow = new System.Windows.Forms.DataGridView();
@@ -67,7 +66,6 @@
             this.groupBox1.Controls.Add(this.txtMaSV);
             this.groupBox1.Controls.Add(this.btnThoat);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnDoiMatKhau);
             this.groupBox1.Controls.Add(this.txtTenSV);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -109,17 +107,6 @@
             this.label2.Size = new System.Drawing.Size(77, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "Mã SV: ";
-            // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(972, 26);
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(116, 39);
-            this.btnDoiMatKhau.TabIndex = 2;
-            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
-            this.btnDoiMatKhau.UseVisualStyleBackColor = true;
-            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // txtTenSV
             // 
@@ -258,7 +245,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnDoiMatKhau;
         private System.Windows.Forms.TextBox txtTenSV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaSV;

@@ -145,14 +145,14 @@
             this.panel1.Location = new System.Drawing.Point(16, 218);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1158, 203);
+            this.panel1.Size = new System.Drawing.Size(1158, 185);
             this.panel1.TabIndex = 83;
             // 
             // cboKhoa
             // 
             this.cboKhoa.FormattingEnabled = true;
             this.cboKhoa.Location = new System.Drawing.Point(721, 69);
-            this.cboKhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboKhoa.Margin = new System.Windows.Forms.Padding(4);
             this.cboKhoa.Name = "cboKhoa";
             this.cboKhoa.Size = new System.Drawing.Size(320, 28);
             this.cboKhoa.TabIndex = 106;
@@ -161,10 +161,10 @@
             // 
             this.btnThem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(789, 122);
+            this.btnThem.Location = new System.Drawing.Point(849, 114);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(253, 53);
+            this.btnThem.Size = new System.Drawing.Size(192, 53);
             this.btnThem.TabIndex = 59;
             this.btnThem.Text = "Thêm ";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -252,11 +252,11 @@
             // 
             this.dgvGiangVien.BackgroundColor = System.Drawing.Color.White;
             this.dgvGiangVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGiangVien.Location = new System.Drawing.Point(16, 438);
-            this.dgvGiangVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGiangVien.Location = new System.Drawing.Point(16, 419);
+            this.dgvGiangVien.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGiangVien.Name = "dgvGiangVien";
             this.dgvGiangVien.RowHeadersWidth = 51;
-            this.dgvGiangVien.Size = new System.Drawing.Size(1160, 395);
+            this.dgvGiangVien.Size = new System.Drawing.Size(1160, 370);
             this.dgvGiangVien.TabIndex = 84;
             this.dgvGiangVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellClick);
             // 
@@ -264,7 +264,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(1033, 854);
+            this.btnBack.Location = new System.Drawing.Point(1034, 793);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(141, 53);
@@ -277,13 +277,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 937);
+            this.ClientSize = new System.Drawing.Size(1191, 853);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvGiangVien);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmGiangVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGiangVien";
